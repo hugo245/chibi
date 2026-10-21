@@ -36,7 +36,6 @@ a{color:inherit}
 :focus-visible{outline:4px solid var(--gold);outline-offset:4px;border-radius:12px}
 .logo-type{font-family:"Lilita One",system-ui,sans-serif;font-weight:400;-webkit-text-stroke:var(--sw,10px) var(--ink);paint-order:stroke fill}
 
-/* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;
   background:
     radial-gradient(circle at 72% 48%, color-mix(in srgb,var(--glow) 95%,#fff) 0, var(--glow) 18%, color-mix(in srgb,var(--glow) 55%,var(--night)) 48%, var(--night) 90%);
@@ -87,7 +86,6 @@ h1 span:hover{transform:rotate(0) translateY(-14px) scale(1.06)}
 @keyframes twinkle{50%{transform:scale(.55) rotate(45deg);opacity:.7}}
 
 
-/* ---------- work ---------- */
 .work-wrap{position:relative;background:
   radial-gradient(700px 500px at 0% 10%, rgba(143,91,255,.35), transparent 70%),
   radial-gradient(700px 500px at 100% 45%, rgba(34,211,255,.22), transparent 70%),
@@ -132,7 +130,6 @@ h2 .alt{color:var(--gold)}
 .tag{font-size:12px;font-weight:800;border-radius:8px;padding:3px 9px;background:var(--ink);color:#fff;white-space:nowrap;text-shadow:none}
 .card[hidden]{display:none}
 
-/* ---------- contact ---------- */
 .contact{position:relative;max-width:1320px;margin:0 auto;padding:40px 40px 120px;text-align:center}
 .contact h2{font-size:clamp(46px,5.6vw,80px)}
 .ways{max-width:1020px;margin:0 auto}
@@ -151,7 +148,6 @@ h2 .alt{color:var(--gold)}
 .st2{right:40px;top:0;rotate:12deg}
 footer{background:var(--ink);text-align:center;padding:22px;color:var(--muted);font-weight:600;font-size:15px}
 
-/* ---------- viewer ---------- */
 dialog{border:0;padding:0;margin:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;color:#fff;overflow:hidden}
 dialog::backdrop{background:radial-gradient(circle, color-mix(in srgb,var(--vc,#8F5BFF) 45%,#12052E), #0C0322 75%)}
 .viewer{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 100px}
@@ -251,7 +247,6 @@ dialog::backdrop{background:radial-gradient(circle, color-mix(in srgb,var(--vc,#
   <img class="sticker st2" id="c-art2" alt="">
   <h2 class="logo-type">Need art for your game?</h2>
   <p>Tell me what you have in mind, whether it's a weapon skin, a thumbnail or a logo, and I'll get back to you.</p>
-  <!-- Replace "test" and the # links with her real details -->
   <div class="ways">
     <a class="way" href="#" style="--c:var(--violet);--fg:#fff">
       <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>
@@ -286,7 +281,6 @@ const byTitle = t => WORKS.findIndex(w=>w.title===t);
 const root = document.documentElement;
 const DARKTEXT = c => c==='logos'||c==='thumbnails';
 
-/* featured spotlight */
 const FEATURED = [
   ["Void blaster","#9A4DFF"],["Fire orb","#FF3B47"],["Star wings badge","#14B8FF"],
   ["Number one flame","#FF8A1F"],["Chocolate heart wings","#FF4FA8"],["Frost revolver","#19C9E6"],["Carrot scythe","#2FC46B"]
@@ -309,7 +303,6 @@ featImg.onclick=()=>openViewer(FEATURED[fi].i);
 document.getElementById('c-art1').src=WORKS[byTitle('Crown badge')].src;
 document.getElementById('c-art2').src=WORKS[byTitle('Number one flame')].src;
 
-/* gallery */
 const grid=document.getElementById('grid');
 WORKS.forEach((w,i)=>{
   const b=document.createElement('button');
@@ -333,7 +326,6 @@ tabs.forEach(t=>{
   };
 });
 
-/* viewer */
 const viewer=document.getElementById('viewer'), vImg=document.getElementById('v-img');
 let cur=0;
 const visible=()=>[...grid.querySelectorAll('.card:not([hidden])')].map(c=>+c.dataset.i);
